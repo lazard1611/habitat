@@ -1,0 +1,40 @@
+@import "form-default-input";
+
+.form_textarea {
+	@include bp($point_4, min) {
+		padding-top: 1.7rem;
+	}
+
+	@include bp($point_4 - 1) {
+		padding-top: 3.2rem;
+	}
+}
+
+.form_textarea__block {
+	position: relative;
+}
+
+.form_textarea__label {
+	@include form_el_label;
+}
+
+.form_textarea__element {
+	@include form_el_default;
+
+	.form_textarea & {
+		padding-right: 5rem;
+		padding-top: 1.4rem;
+		line-height: 1.18;
+		resize: none;
+
+		@include bp($point_4, min) {
+			height: 5.6rem;
+			line-height: 1.24;
+		}
+
+		@include bp($point_4 - 1) {
+			height: 4.2rem;
+			line-height: 1.18;
+		}
+	}
+}

@@ -1,0 +1,100 @@
+.btn_small {
+	@include btn_size_small;
+	@include btn_style_dark;
+}
+
+.btn_normal {
+	@include btn_size_normal_v2;
+	@include btn_style_dark_v2;
+}
+
+.btn__decor {
+	@include btn_size_decor;
+	@include btn_style_white;
+
+	overflow: hidden;
+	flex-shrink: 0;
+
+	span {
+		position: relative;
+		z-index: 2;
+
+		transition: transform 0.3s ease;
+	}
+
+	&:before {
+		display: block;
+
+		background-color: $black;
+		border-radius: 50%;
+		transition: transform 0.4s ease;
+
+		content: '';
+
+		@include bp($point_0, min) {
+			width: 1.6rem;
+			height: 1.6rem;
+			margin-right: 0.8rem;
+		}
+
+		@include bp($point_0 - 1, $point_1) {
+			width: 1.2rem;
+			height: 1.2rem;
+			margin-right: 0.6rem;
+		}
+
+		@include bp($point_1 - 1) {
+			width: 1.6rem;
+			height: 1.6rem;
+			margin-right: 0.8rem;
+		}
+	}
+
+	&:hover {
+		&:before {
+			transform: scale(14);
+		}
+
+		span {
+			transform: translateX(-1rem);
+		}
+	}
+}
+
+.btn__decor_v2 {
+	@include btn_size_decor_v2;
+	@include btn_style_white;
+
+	overflow: hidden;
+	flex-shrink: 0;
+
+	span {
+		position: relative;
+		z-index: 2;
+
+		transition: transform 0.3s ease;
+	}
+
+	&:before {
+		display: block;
+		width: 1.6rem;
+		height: 1.6rem;
+		margin-right: 0.8rem;
+
+		background-color: $black;
+		border-radius: 50%;
+		transition: transform 0.4s ease;
+
+		content: '';
+	}
+
+	&:hover {
+		&:before {
+			transform: scale(14);
+		}
+
+		span {
+			transform: translateX(-1rem);
+		}
+	}
+}

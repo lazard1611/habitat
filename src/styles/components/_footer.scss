@@ -1,0 +1,219 @@
+
+.footer {
+	flex: 0 0 auto;
+	display: flex;
+	flex-direction: column;
+
+	padding: 0 var(--gl-indent);
+
+	will-change: transform;
+
+	min-height: 100vh;
+	background-color: $white;
+	color: $black;
+
+	a {
+		transition: color 0.3s ease;
+		color: inherit;
+
+		&:focus,
+		&:hover {
+			text-decoration: none;
+			color: $black_3;
+		}
+	}
+}
+
+.contact_us .footer {
+	min-height: auto;
+	background-color: $black;
+	color: $white;
+}
+
+.footer__in {
+	flex: auto;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+.footer__head {
+	font-weight: 300;
+
+	h2 {
+		font-weight: 400;
+	}
+
+	a {
+		position: relative;
+
+		&:after {
+			position: absolute;
+			left: 0;
+			bottom: 0.12em;
+
+			display: block;
+			width: 100%;
+			height: 0.2rem;
+			background-color: $black;
+			transition: opacity 0.3s ease;
+
+			content: '';
+		}
+
+		&:focus,
+		&:hover {
+			&:after {
+				opacity: 0;
+			}
+		}
+	}
+
+	@include bp($point_0, min) {
+		flex: auto;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		padding: 4rem 0;
+
+		font-size: 9.6rem;
+		line-height: 1.08;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		flex: auto;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		padding: 4rem 0;
+
+		font-size: 7.2rem;
+		line-height: 1.11;
+	}
+
+	@include bp($point_4 - 1) {
+		padding: 14.4rem 0 13.2rem;
+
+		font-size: 4.8rem;
+		line-height: 1.17;
+	}
+}
+
+.footer__bottom {
+	border-top: 1px solid $black;
+
+	@include bp($point_4, min) {
+		padding: 2.7rem 0 8.8rem;
+	}
+
+	@include bp($point_4 - 1) {
+		padding: 2.6rem 0 13rem;
+	}
+}
+
+.contact_us .footer__bottom {
+	border-top: 1px solid $white;
+}
+
+.footer__row {
+	@include bp($point_4, min) {
+		display: flex;
+	}
+}
+
+.footer__col_left {
+
+	a {
+		font-weight: 500;
+		font-size: 1.6rem;
+	}
+
+	small {
+		font-weight: 300;
+		font-size: 1.2rem;
+		line-height: 1.33;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_4 - 1) {
+			margin-bottom: 6rem;
+		}
+	}
+
+	@include bp($point_0, min) {
+		width: 63.6%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		width: 68.2%;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.footer__link_wrap {
+	flex: auto;
+
+	&:not(:last-child) {
+		margin-bottom: 0.8rem;
+	}
+}
+
+.footer__col_right {
+	display: flex;
+	justify-content: space-between;
+
+	@include bp($point_0, min) {
+		width: 36.4%;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		width: 31.8%;
+	}
+}
+
+.footer__list {
+	li {
+		&:not(:last-child) {
+			@include bp($point_0, min) {
+				margin-bottom: 1.6rem;
+			}
+
+			@include bp($point_0 - 1, $point_2) {
+				margin-bottom: 1.2rem;
+			}
+
+			@include bp($point_3) {
+				margin-bottom: 3.2rem;
+			}
+		}
+	}
+
+	a {
+		font-weight: 500;
+
+		@include bp($point_1, min) {
+			font-size: 1.4rem;
+			line-height: 1.43;
+		}
+
+		@include bp($point_1 - 1) {
+			font-size: 1.2rem;
+			line-height: 1.33;
+		}
+	}
+
+	&:not(:last-child) {
+		@include bp($point_4, min) {
+			padding-right: 3rem;
+		}
+	}
+
+	@include bp($point_4 - 1) {
+		padding-right: 1.1rem;
+	}
+}

@@ -1,0 +1,44 @@
+//---------------------------------------------fonts
+$font_1: 'Epilogue', sans-serif;
+$fontSizeBase: 1.6rem;
+//---------------------------------------------fonts###
+//---------------------------------------------layout
+$pageWidth: 96rem;
+//---------------------------------------------layout###
+//---------------------------------------------colors
+$white: #ffffff;
+$black: #000;
+$black_2: #3b3d40;
+$black_3: #4e5356;
+$black_dolphin: #18181a;
+$gray: #b8bec8;
+$pink: #FF9D9D;
+
+$colorTextBase: $white;
+$colorLinkBase: #4aa3df;
+$bodyBg: $black;
+//---------------------------------------------colors###
+//---------------------------------------------global values
+$glRadius: 1rem;
+//---------------------------------------------global values###
+//---------------------------------------------media points
+$point_0: 1920px;
+$point_1: 1440px;
+$point_2: 991px;
+$point_3: 990px;
+$point_4: 768px;
+$point_5: 640px;
+$point_6: 480px;
+$point_7: 375px;
+$point_8: 320px;
+//---------------------------------------------media points###
+//---------------------------------------------form style
+$input_height: 6.4rem;
+$input_offset: 0;
+$input_font_size: $fontSizeBase;
+$input_text_color: $gray;
+$input_border_color: $gray;
+$input_radius: 0;
+$input_border_color_active: $white;
+$input_placeholder_color: $gray;
+//---------------------------------------------form style###

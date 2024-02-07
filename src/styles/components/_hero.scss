@@ -1,0 +1,73 @@
+.hero {
+	@include bp($point_0, min) {
+		padding-top: 13.6rem;
+		padding-bottom: 7rem;
+	}
+
+	@include bp($point_0 - 1, $point_1) {
+		padding-top: 10.2rem;
+		padding-bottom: 6rem;
+	}
+
+	@include bp($point_4) {
+		padding-top: 10.2rem;
+		padding-bottom: 7.4rem;
+	}
+}
+
+.hero__title {
+	@include h1;
+	overflow: hidden;
+
+	@include bp($point_4, min) {
+		//letter-spacing: -0.003em;
+		max-width: 90%;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 4.6rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin-bottom: 1.6rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 3rem;
+		}
+	}
+}
+
+.split-line {
+	&:not(:last-child) {
+		margin-bottom: -0.2em;
+	}
+}
+
+.hero__description_wrap {
+	margin-left: auto;
+
+	@include bp($point_4, min) {
+		width: 50%;
+	}
+}
+
+.hero__description {
+	@include h3;
+
+	margin-left: auto;
+	color: $gray;
+
+	@include bp($point_0, min) {
+		width: 72.7%;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		width: 63.6%;
+	}
+
+	@include bp($point_4) {
+		width: 70.8%;
+	}
+}

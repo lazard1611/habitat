@@ -1,0 +1,145 @@
+@mixin h1 {
+	font-weight: 300;
+
+	@include bp($point_0, min) {
+		font-size: 8.8rem;
+		line-height: 1.05;
+		letter-spacing: -0.004em;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		font-size: 6.4rem;
+		line-height: 1.08;
+		letter-spacing: -0.003em;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 3.2rem;
+		//line-height: 1.25;
+		line-height: 1.45;
+	}
+}
+
+@mixin h2 {
+	font-weight: 400;
+
+	@include bp($point_0, min) {
+		font-size: 5.6rem;
+		line-height: 1.14;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		font-size: 4rem;
+		line-height: 1.2;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 2.4rem;
+		line-height: 1.33;
+	}
+}
+
+@mixin h3 {
+	font-weight: 300;
+
+	@include bp($point_0, min) {
+		font-size: 2rem;
+		line-height: 1.6;
+	}
+
+	@include bp($point_0 - 1) {
+		font-size: 1.6rem;
+		line-height: 1.5;
+	}
+}
+
+@mixin h4 {
+	font-weight: 300;
+
+	@include bp($point_0, min) {
+		font-size: 1.6rem;
+		line-height: 1.75;
+	}
+
+	@include bp($point_0 - 1, $point_1) {
+		font-size: 1.2rem;
+		line-height: 1.67;
+	}
+
+	@include bp($point_1 - 1, $point_4) {
+		font-size: 2rem;
+		line-height: 1.67;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 1.2rem;
+		line-height: 1.5;
+	}
+}
+
+@mixin h5 {
+	@include bp($point_0, min) {
+		font-size: 3.2rem;
+		line-height: 1.5;
+	}
+
+	@include bp($point_0 - 1, $point_1) {
+		font-size: 2.4rem;
+		line-height: 1.5;
+	}
+
+	@include bp($point_1 - 1, $point_4) {
+		font-size: 3rem;
+		line-height: 1.5;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 2rem;
+		line-height: 1.4;
+	}
+}
+
+@mixin h6 {
+	font-weight: 300;
+
+	@include bp($point_0, min) {
+		font-size: 8.8rem;
+		line-height: 1.01;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		font-size: 6.4rem;
+		line-height: 1.13;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 3.2rem;
+		line-height: 1.25;
+	}
+}
+
+@mixin h7 {
+	font-weight: 600;
+	line-height: 1;
+
+	@include bp($point_0, min) {
+		font-size: 1.8rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		font-size: 1.4rem;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 1.6rem;
+	}
+}
+
+@mixin text {
+	font-size: 1.8rem;
+}
+// offsets
+
+@mixin title_offset {
+	margin-bottom: 2rem;
+}

@@ -1,0 +1,166 @@
+@mixin form_el_label {
+	position: absolute;
+	left: 0;
+	display: block;
+
+	@include h3;
+	pointer-events: none;
+	transition: transform 0.3s ease, font-size 0.3s ease;
+
+	&:not(.form_input--error_state &) {
+		color: $gray;
+	}
+
+	.form_input--error_state & {
+		color: $pink;
+	}
+
+	.form_textarea & {
+		@include bp($point_4, min) {
+			bottom: 1.6rem;
+		}
+
+		@include bp($point_4 - 1) {
+			bottom: 0.9rem;
+		}
+	}
+
+	.form_input & {
+		@include bp($point_4, min) {
+			top: 2.5rem;
+		}
+
+		@include bp($point_4 - 1) {
+			top: 2.2rem;
+		}
+	}
+}
+
+@mixin form_el_default {
+	@include h3;
+
+	display: block;
+	width: 100%;
+	//height: $input_height;
+	height: auto;
+
+	font-family: $font_1;
+	color: $input_text_color;
+	border: none;
+	border-bottom: 0.2rem solid $white;
+	background-clip: padding-box;
+	border-radius: $input_radius;
+
+	transition: transform 0.3s ease;
+	will-change: transform;
+
+	@include bp($point_4, min) {
+		padding: 2.4rem 0 1.3rem;
+	}
+
+	@include bp($point_4 - 1) {
+		padding: 2.4rem 0 0.6rem;
+	}
+
+	.form_input--error_state & {
+		color: $pink;
+		border-color: $pink;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 0.8rem;
+	}
+
+	&:-webkit-autofill {
+		-webkit-box-shadow: 0 0 0 1000px $bodyBg inset;
+		-webkit-text-fill-color: $input_text_color;
+	}
+
+	&:focus + .form_input__label,
+	&:focus + .form_textarea__label,
+	&.form_input--focus_state + .form_input__label,
+	&.form_input--focus_state + .form_textarea__label {
+		font-size: 1.2rem;
+
+		@include bp($point_4, min) {
+			transform: translateY(-3.8rem);
+		}
+
+		@include bp($point_4 - 1) {
+			transform: translateY(-2.6rem);
+		}
+
+		.form_textarea & {
+			@include bp($point_4 - 1) {
+				transform: translateY(-3.6rem);
+			}
+		}
+	}
+
+	&::-webkit-input-placeholder {
+		@include h3;
+		color: $input_placeholder_color;
+
+		@include bp($point_4 - 1) {
+			letter-spacing: -0.01em;
+		}
+	}
+
+	&::-moz-placeholder {
+		@include h3;
+		color: $input_placeholder_color;
+		opacity: 1;
+
+		@include bp($point_4 - 1) {
+			letter-spacing: -0.01em;
+		}
+	}
+
+	&:-ms-input-placeholder {
+		@include h3;
+		color: $input_placeholder_color;
+
+		@include bp($point_4 - 1) {
+			letter-spacing: -0.01em;
+		}
+	}
+
+	// HIDE USER ICON
+	&::-webkit-contacts-auto-fill-button {
+		visibility: hidden;
+		position: absolute;
+		right: 0;
+	}
+
+	&[type='search'] {
+		// HIDE CLEAR ICON
+		&::-ms-clear,
+		&::-ms-reveal {
+			display: none;
+		}
+
+		// HIDE SAFARI DEFAULT BROWSER DECORATIONS
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+	}
+
+	&[type='date'] {
+		// HIDE CALENDAR ICON
+		&::-webkit-calendar-picker-indicator {
+			opacity: 0;
+		}
+	}
+
+	@at-root {
+		// CLEAR DEFAULT SAFARI BG
+		select#{&} {
+			-webkit-tap-highlight-color: transparent;
+		}
+	}
+
+	@include appearance(none);
+}

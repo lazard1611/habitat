@@ -1,0 +1,233 @@
+@mixin st_btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: center;
+	white-space: nowrap;
+	font-family: $font_1;
+
+	cursor: pointer;
+
+	&[type='submit'] {
+		@include appearance(none);
+	}
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+//color mixins:
+@mixin btn_style_white {
+	font-weight: 700;
+	color: $black;
+	background-color: $white;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	border: 2px solid $white;
+
+	@include st_btn;
+
+	&:hover {
+		color: $white;
+	}
+}
+
+@mixin btn_style_dark {
+	font-weight: 500;
+	color: $white;
+	background-color: $black_dolphin;
+	//transition: background-color 0.3s ease, color 0.3s ease;
+
+	@include st_btn;
+	cursor: auto;
+
+	&:hover {
+		//color: $black;
+		//background-color: $white;
+	}
+}
+
+@mixin btn_style_dark_v2 {
+	font-weight: 400;
+	//color: $black_2;
+	color: $white;
+	background-color: $black_dolphin;
+	transition: background-color 0.3s ease, color 0.3s ease;
+	//-webkit-text-fill-color: transparent;
+	//-webkit-background-clip: text;
+
+	@include st_btn;
+}
+
+//size mixins:
+@mixin btn_size_decor {
+	@include bp($point_0, min) {
+		height: 4.8rem;
+		padding: 0 2rem 0 1.6rem;
+
+		line-height: 4.8rem;
+		font-size: 1.6rem;
+
+		border-radius: 2.4rem;
+	}
+
+	@include bp($point_0 - 1, $point_1) {
+		height: 3.6rem;
+		padding: 0 1.6rem 0 1.2rem;
+
+		line-height: 3.6rem;
+		font-size: 1.2rem;
+
+		border-radius: 1.8rem;
+	}
+
+	@include bp($point_1 - 1, $point_2) {
+		height: 4.8rem;
+		padding: 0 2rem 0 1.6rem;
+
+		line-height: 4.8rem;
+		font-size: 1.6rem;
+
+		border-radius: 2.4rem;
+	}
+
+	@include bp($point_3) {
+		height: 3.6rem;
+		padding: 0 1.6rem 0 1.2rem;
+
+		line-height: 3.6rem;
+		font-size: 1.2rem;
+
+		border-radius: 1.8rem;
+	}
+}
+
+@mixin btn_size_decor_v2 {
+	height: 4.8rem;
+	padding: 0 2rem 0 1.6rem;
+
+	line-height: 4.8rem;
+	font-size: 1.6rem;
+
+	border-radius: 2.4rem;
+}
+
+@mixin btn_size_normal {
+	@include bp($point_0, min) {
+		height: 5rem;
+		padding: 0 2.4rem 0 1.6rem;
+
+		line-height: 5rem;
+		font-size: 1.6rem;
+
+		border-radius: 2.5rem;
+	}
+
+	@include bp($point_0 - 1, $point_1) {
+		height: 3.6rem;
+		padding: 0 1.2rem 0;
+
+		line-height: 3.6rem;
+		font-size: 1.2rem;
+
+		border-radius: 1.8rem;
+	}
+
+	@include bp($point_3) {
+		height: 3.6rem;
+		padding: 0 1.2rem 0;
+
+		line-height: 3.6rem;
+		font-size: 1.2rem;
+
+		border-radius: 1.8rem;
+	}
+}
+
+@mixin btn_size_normal_v2 {
+
+	@include bp($point_0, min) {
+		height: 7.8rem;
+		padding: 0 3.2rem;
+
+		line-height: 7.8rem;
+		font-size: 3.2rem;
+
+		border-radius: 3.9rem;
+	}
+
+	@include bp($point_0 - 1, $point_1) {
+		height: 6.4rem;
+		padding: 0 3.2rem 0;
+
+		line-height: 6.4rem;
+		font-size: 2.4rem;
+
+		border-radius: 3.2rem;
+	}
+
+	@include bp($point_1 - 1, $point_2) {
+		height: 7.8rem;
+		padding: 0 3.2rem;
+
+		line-height: 7.8rem;
+		font-size: 3.2rem;
+
+		border-radius: 3.9rem;
+	}
+
+	@include bp($point_3) {
+		height: 4.6rem;
+		padding: 0 1.4rem;
+
+		line-height: 4.6rem;
+		font-size: 1.6rem;
+
+		border-radius: 2.3rem;
+	}
+}
+
+@mixin btn_size_small {
+
+	@include bp($point_0, min) {
+		padding: 0 1.6rem;
+		height: 4rem;
+
+		font-size: 1.4rem;
+
+		line-height: 4rem;
+		border-radius: 4rem;
+	}
+
+	@include bp($point_0 - 1, $point_1) {
+		height: 3.6rem;
+		padding: 0 1.2rem 0;
+
+		line-height: 3.6rem;
+		font-size: 1.2rem;
+
+		border-radius: 1.8rem;
+	}
+
+	@include bp($point_1 - 1, $point_2) {
+		height: 4.2rem;
+		padding: 0 1.2rem 0;
+
+		line-height: 4.2rem;
+		font-size: 1.8rem;
+
+		border-radius: 2.1rem;
+	}
+
+	@include bp($point_3) {
+		height: 3.2rem;
+		padding: 0 1.4rem 0;
+
+		line-height: 3.2rem;
+		font-size: 1.2rem;
+
+		border-radius: 1.8rem;
+	}
+}

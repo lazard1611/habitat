@@ -1,0 +1,59 @@
+@mixin form_el_radio {
+	position: relative;
+
+	padding-left: 3.4rem;
+
+	@include h3;
+	color: $colorTextBase;
+	cursor: pointer;
+
+	&:before {
+		content: '';
+		position: absolute;
+		border-radius: 100%;
+		border: 1px solid $colorTextBase;
+		cursor: pointer;
+
+		@include bp($point_4, min) {
+			top: -1px;
+			left: 0;
+			width: 2rem;
+			height: 2rem;
+		}
+
+		@include bp($point_4 - 1) {
+			top: 0.2rem;
+			left: 0.5rem;
+			width: 1.4rem;
+			height: 1.4rem;
+		}
+	}
+
+	&:after {
+		@include transition_opacity;
+
+		content: '';
+		position: absolute;
+		border-radius: 100%;
+		background: $colorTextBase;
+		opacity: 0;
+
+		@include bp($point_4, min) {
+			top: 0.4rem;
+			left: 0.5rem;
+			width: 1rem;
+			height: 1rem;
+		}
+
+		@include bp($point_4 - 1) {
+			top: 0.5rem;
+			left: 0.8rem;
+			width: 0.8rem;
+			height: 0.8rem;
+		}
+
+		.form_radio__element:checked + & {
+			opacity: 1;
+		}
+	}
+}

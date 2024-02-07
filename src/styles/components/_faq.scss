@@ -1,0 +1,56 @@
+.faq {
+	@include bp($point_2, min) {
+		padding-bottom: 21rem;
+	}
+
+	@include bp($point_3) {
+		padding-top: 7.6rem;
+	}
+}
+
+.faq__row {
+	@include bp($point_2, min) {
+		display: flex;
+	}
+}
+
+.faq__col_left {
+	@include bp($point_0, min) {
+		width: 44.6%;
+		padding-right: 8rem;
+	}
+
+	@include bp($point_0 - 1, $point_2) {
+		width: 42.6%;
+		padding-right: 8rem;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_3) {
+			margin-bottom: 2.4rem;
+		}
+	}
+}
+
+.faq__col_right {
+	@include bp($point_0, min) {
+		width: 55.4%;
+	}
+
+	@include bp($point_0 - 1, $point_2) {
+		padding-top: 0.6rem;
+		width: 57.4%;
+	}
+}
+
+.faq__title {
+	@include h2;
+
+	letter-spacing: -0.007em;
+
+	.faq & {
+		@include bp($point_2, min) {
+			line-height: 1.1;
+		}
+	}
+}

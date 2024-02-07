@@ -1,0 +1,142 @@
+:root {
+	//--height-footer: 10rem;
+
+	@include bp($point_0, min) {
+		--gl-indent: 8rem;
+		--height-header: 8.8rem;
+		--left-indent: 22.4rem;
+	}
+
+	@include bp($point_0 - 1, $point_1) {
+		--gl-indent: 6.4rem;
+		--height-header: 6.8rem;
+		--left-indent: 22.4rem;
+	}
+
+	@include bp($point_1 - 1, $point_4) {
+		--height-header: 6.8rem;
+		--gl-indent: 2.4rem;
+		--left-indent: 22.4rem;
+	}
+
+	@include bp($point_4 - 1) {
+		--height-header: 6.4rem;
+		--gl-indent: 2.4rem;
+	}
+}
+
+html {
+	height: 100%;
+	font-family: $font_1;
+	font-weight: 400;
+	line-height: 1.33;
+
+	//@include bp($point_3, min) {
+	//	cursor: none !important;
+	//
+	//	*:hover {
+	//		cursor: none !important;
+	//	}
+	//}
+
+	@include bp($point_0, min) {
+		font-size: calc(100vw / 192);
+	}
+
+	@include bp($point_0 - 1, 1201px) {
+		font-size: calc(100vw / 144);
+	}
+
+	@include bp(1200px, $point_4) {
+		font-size: calc(100vw / 120);
+	}
+
+	@include bp($point_4 - 1, $point_7) {
+		font-size: 10px;
+	}
+
+	@include bp($point_7 - 1) {
+		font-size: calc(100vw / 37.5);
+	}
+}
+
+body {
+	position: relative;
+	display: block;
+
+	height: 100%;
+	margin: auto;
+	color: $colorTextBase;
+
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background: $bodyBg;
+
+	&.body--open_menu_state,
+	&.body--preload {
+		//overflow: hidden;
+	}
+}
+
+.wrapper {
+	position: relative;
+
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	height: auto !important;
+
+	overflow: hidden;
+}
+
+.base {
+	z-index: 2;
+	width: 100%;
+	position: relative;
+	padding: var(--height-header) 0 0;
+
+	flex: 1 0 auto;
+	background: $bodyBg;
+}
+
+.section {
+	position: relative;
+	width: 100%;
+
+	@include bp($point_2, min) {
+		padding: 10rem var(--gl-indent);
+	}
+
+	@include bp($point_3) {
+		padding: 6.8rem var(--gl-indent);
+	}
+}
+
+.section_in {
+	width: 100%;
+	max-width: $pageWidth;
+	margin: 0 auto;
+}
+
+.cursor {
+	will-change: transform;
+	mix-blend-mode: difference;
+
+	pointer-events: none;
+	border-radius: 50%;
+	opacity: 0;
+
+	@include bp($point_4, min) {
+		width: 3.2rem;
+		height: 3.2rem;
+		background-color: $white;
+
+		z-index: 1000;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+}

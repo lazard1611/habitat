@@ -1,0 +1,37 @@
+@import 'variable';
+
+/*============Mixins==========*/
+@import 'mixins/global-mixins';
+@import 'mixins/buttons-mixins';
+@import 'mixins/typography';
+
+/*============Base==========*/
+@import 'base/fonts';
+@import 'base/reset';
+@import 'base/base';
+
+/*============Base==========*/
+@import 'ui/forms';
+@import 'ui/buttons';
+
+/*============Libs==========*/
+@import './assets/libs/locomotive-scroll';
+
+/*============Components==========*/
+@import 'components/preloader';
+@import 'components/header';
+@import 'components/hero';
+@import 'components/projects';
+@import 'components/logos';
+@import 'components/team';
+@import 'components/our-services';
+@import 'components/our-capabilities';
+@import 'components/our-manifesto';
+@import 'components/gallery';
+@import 'components/awards';
+@import 'components/accordion';
+@import 'components/faq';
+@import 'components/contact';
+
+@import 'components/footer';
+

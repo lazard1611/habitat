@@ -1,0 +1,315 @@
+.contact {
+
+	@include bp($point_0, min) {
+		padding-top: 13.6rem;
+		padding-bottom: 13.8rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		padding-top: 10.2rem;
+		padding-bottom: 14.2rem;
+	}
+
+	@include bp($point_4 - 1) {
+		padding-top: 3.2rem;
+		padding-bottom: 5.4rem;
+	}
+
+	a {
+		@include h3;
+		color: $gray;
+	}
+
+	h3,
+	h4 {
+		@include h7;
+	}
+
+	p {
+		@include h4;
+	}
+}
+
+.contact__wrap {
+	@include bp($point_2, min) {
+		@include flex_block(row, wrap, flex-start, stretch);
+	}
+}
+
+.contact__col_left {
+	@include bp($point_0, min) {
+		width: 63.6%;
+		padding-right: 4rem;
+	}
+
+	@include bp($point_0 - 1, $point_2) {
+		width: 68.4%;
+		padding-right: 4rem;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_3) {
+			margin-bottom: 14.5rem;
+		}
+	}
+}
+
+.contact__col_right {
+	@include bp($point_0, min) {
+		width: 36.4%;
+		display: flex;
+		flex-direction: column;
+	}
+
+	@include bp($point_0 - 1, $point_2) {
+		width: 31.6%;
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.contact__form {
+	@include bp($point_2, min) {
+		max-width: 75rem;
+	}
+}
+
+.contact__title {
+	@include h2;
+
+	.contact__col_left & {
+		&:not(:last-child) {
+			@include bp($point_4, min) {
+				margin-bottom: 4.6rem;
+			}
+
+			@include bp($point_4 - 1) {
+				margin-bottom: 2.6rem;
+			}
+		}
+	}
+
+	.contact__col_right & {
+		&:not(:last-child) {
+			@include bp($point_4, min) {
+				margin-bottom: 4rem;
+			}
+
+			@include bp($point_4 - 1) {
+				margin-bottom: 2.3rem;
+			}
+		}
+	}
+
+}
+
+.contact__choice {
+
+	@include bp($point_4, min) {
+		@include flex_block(row, wrap, flex-start, flex-start);
+	}
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 9rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin-bottom: 8rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 7.4rem;
+		}
+	}
+}
+
+.contact__choice_check {
+	@include bp($point_2, min) {
+		width: 59.4%;
+	}
+
+	@include bp($point_3) {
+		margin-bottom: 7.2rem;
+	}
+
+	@include bp($point_4, min) {
+		padding-right: 2rem;
+	}
+}
+
+.contact__choice_radio {
+	@include bp($point_2, min) {
+		width: 40.6%;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_2, min) {
+			padding-right: 3rem;
+		}
+	}
+}
+
+.contact__choice_title {
+	@include h7;
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 3.4rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin-bottom: 2.8rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 2rem;
+		}
+	}
+}
+
+.form__row {
+	@include bp($point_4, min) {
+		@include flex_block(row, wrap, flex-start, flex-start);
+		margin: 0 -14.4rem -5rem 0;
+	}
+}
+
+.form__col {
+	@include bp($point_4, min) {
+		width: 50%;
+		padding: 0 14.4rem 5rem 0;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_4 - 1) {
+			margin-bottom: 1.8rem;
+		}
+	}
+}
+
+.contact__input_block {
+	&:not(:last-child) {
+
+		@include bp($point_0, min) {
+			margin-bottom: 3.2rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin-bottom: 2.8rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 1.6rem;
+		}
+	}
+}
+
+.contact__office_wrap {
+	@include bp($point_4, min) {
+		flex: auto;
+		@include flex_block(column, wrap, flex-start, flex-start);
+	}
+
+	h3 {
+		&:not(:last-child) {
+			@include bp($point_0, min) {
+				margin-bottom: 3rem;
+			}
+
+			@include bp($point_0 - 1, $point_4) {
+				margin-bottom: 2.6rem;
+			}
+
+			@include bp($point_4 - 1) {
+				margin-bottom: 2.4rem;
+			}
+		}
+	}
+
+	h4 {
+		&:not(:last-child) {
+			@include bp($point_0, min) {
+				margin-bottom: 1.2rem;
+			}
+
+			@include bp($point_0 - 1) {
+				margin-bottom: 0.8rem;
+			}
+		}
+	}
+}
+
+.contact__mail_wrap {
+	flex: auto;
+	display: inline-flex;
+
+	&:not(:last-child) {
+		@include bp($point_4 - 1) {
+			margin-bottom: 7.6rem;
+		}
+	}
+}
+
+.contact__office_bottom {
+	@include bp($point_0, min) {
+		margin-bottom: 10rem;
+	}
+
+	@include bp($point_0 - 1) {
+		margin-bottom: 8.8rem;
+	}
+}
+
+.contact__office {
+	&:not(:last-child) {
+		margin-bottom: 3.6rem;
+	}
+}
+
+.form__file_pic {
+	display: block;
+
+	@include bp($point_4, min) {
+		width: 2.4rem;
+		height: 2.4rem;
+	}
+
+	@include bp($point_4 - 1) {
+		width: 2.7rem;
+		height: 2.7rem;
+	}
+}
+
+.form__file_img {
+	@include contain_img;
+}
+
+.form__file_info {
+	@include flex_block(row, nowrap, flex-start, center);
+
+	margin-top: 1.6rem;
+
+	font-weight: 300;
+	font-size: 1.8rem;
+	line-height: 1.75;
+}
+
+.form__file_reset {
+	flex-shrink: 0;
+	width: 2rem;
+	height: 2rem;
+	background-size: cover;
+	//margin-top: 0.3rem;
+	margin: 0 1rem 0 0.8rem;
+
+	background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 16L16 4" stroke="white" stroke-width="2"/><path d="M16 16L4 4" stroke="white" stroke-width="2"/></svg>');
+}
+
+.form__file_name {
+	font-weight: 300;
+	font-size: 1.8rem;
+	line-height: 1.75;
+	overflow: hidden;
+	white-space: nowrap;
+}

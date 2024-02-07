@@ -1,0 +1,279 @@
+.awards {
+	@include bp($point_0, min) {
+		padding-top: 3.8rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		padding-top: 3rem;
+		padding-bottom: 4.6rem;
+	}
+
+	@include bp($point_4 - 1) {
+		padding-top: 7.6rem;
+	}
+}
+
+.awards__title {
+	font-weight: 300;
+	line-height: 1.25;
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 3.8rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin-bottom: 2.4rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 4rem;
+		}
+	}
+
+	@include bp($point_0, min) {
+		font-size: 3.2rem;
+	}
+
+	@include bp($point_0 - 1) {
+		font-size: 2.4rem;
+	}
+}
+
+.awards__row {
+	@include bp($point_4, min) {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-wrap: wrap;
+	}
+}
+
+.awards__col_left {
+	@include bp(1201px, min) {
+		width: 57.3%;
+		padding-right: 4rem;
+	}
+
+	@include bp(1200px, $point_4) {
+		width: 56%;
+		padding-right: 4rem;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_4 - 1) {
+			margin-bottom: 5rem;
+		}
+	}
+}
+
+.awards__col_right {
+	@include bp(1201px, min) {
+		width: 42.7%;
+	}
+
+	@include bp(1200px, $point_4) {
+		width: 44%;
+	}
+}
+
+.awards__list {
+	.awards__col_left & {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-wrap: wrap;
+
+		@include bp($point_0, min) {
+			margin: 0 -14.3rem -4rem 0;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin: 0 -10.6rem -4rem 0;
+		}
+
+		@include bp($point_4 - 1) {
+			margin: 0 -4rem -3.5rem 0;
+		}
+	}
+
+	.awards__col_right & {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		flex-wrap: wrap;
+
+		@include bp($point_0, min) {
+			padding-top: 0.8rem;
+			margin: 0 -8rem -4rem 0;
+		}
+
+		@include bp($point_0 - 1, 1201px) {
+			margin: 0 -8rem -4rem 3rem;
+		}
+
+		@include bp(1200px, $point_4) {
+			margin: 0 -8rem -4rem 0;
+		}
+
+		@include bp($point_4 - 1) {
+			margin: 0 -4rem -4.9rem 0;
+		}
+	}
+}
+
+.awards__item {
+	.awards__col_left & {
+		@include bp($point_0, min) {
+			padding: 0 14.3rem 4rem 0;
+			max-width: 44.8rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			padding: 0 10.6rem 4rem 0;
+			max-width: 44.8rem;
+		}
+
+		@include bp($point_4 - 1) {
+			padding: 0 4rem 3.5rem 0;
+		}
+	}
+
+	.awards__col_right & {
+		@include bp($point_4, min) {
+			padding: 0 8rem 4rem 0;
+			max-width: 22.3rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			padding: 0 5.5rem 4rem 0;
+			max-width: 22.3rem;
+		}
+
+		@include bp($point_4 - 1) {
+			padding: 0 4rem 4.9rem 0;
+		}
+	}
+
+	&:nth-child(odd) {
+		@include bp($point_4 - 1) {
+			width: 53%;
+		}
+	}
+
+	&:nth-child(even) {
+		@include bp($point_4 - 1) {
+			width: 47%;
+		}
+	}
+}
+
+.awards__head {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-end;
+	flex-wrap: wrap;
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 1.4rem;
+		}
+
+		@include bp($point_0 - 1) {
+			margin-bottom: 1rem;
+		}
+	}
+}
+
+.awards__pic {
+	display: block;
+	width: auto;
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-right: 1.6rem;
+		}
+
+		@include bp($point_0 - 1, 1201px) {
+			margin-right: 1.2rem;
+		}
+
+		@include bp(1200px, $point_4) {
+			margin-right: 1.6rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-right: 0.9rem;
+		}
+	}
+
+	@include bp($point_0, min) {
+		height: 4.8rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		height: 3.2rem;
+	}
+
+	@include bp($point_4 - 1) {
+		height: 2.6rem;
+	}
+}
+
+.awards__img {
+	@include contain_img;
+}
+
+.awards__item_title {
+	font-weight: 400;
+
+	.awards__col_left & {
+		line-height: 1;
+	}
+
+	.awards__col_right & {
+		line-height: 1.5;
+
+		&:not(:last-child) {
+			@include bp($point_4, min) {
+				margin-bottom: 0.4rem;
+			}
+
+			@include bp($point_4 - 1) {
+				margin-bottom: 0.5rem;
+			}
+		}
+	}
+
+	@include bp($point_0, min) {
+		font-size: 3.2rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		font-size: 2.4rem;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 2rem;
+	}
+}
+
+.awards__item_description {
+	font-weight: 300;
+	color: $gray;
+
+	@include bp($point_0, min) {
+		font-size: 1.6rem;
+		line-height: 1.75;
+	}
+
+	@include bp($point_0 - 1, 1201px) {
+		font-size: 1.2rem;
+		line-height: 1.75;
+	}
+
+	@include bp(1200px) {
+		font-size: 1.2rem;
+		line-height: 1.5;
+	}
+}

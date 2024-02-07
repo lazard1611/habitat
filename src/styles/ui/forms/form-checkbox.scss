@@ -1,0 +1,25 @@
+@import "form-default-checkbox";
+
+.form_checkbox {
+	&:not(:last-child) {
+		@include bp($point_4, min) {
+			margin-bottom: 2rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 0.8rem;
+		}
+	}
+}
+
+.form_checkbox__block {
+	display: block;
+}
+
+.form_checkbox__element {
+	display: none;
+}
+
+.form_checkbox__label {
+	@include form_el_checkbox();
+}

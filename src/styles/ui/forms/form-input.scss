@@ -1,0 +1,56 @@
+@import "form-default-input";
+
+.form_input__wrap {
+	&:not(:last-child) {
+
+		@include bp($point_0, min) {
+			margin-bottom: 1.6rem;
+		}
+	}
+}
+
+.form_input {
+	position: relative;
+}
+
+.form_input__label {
+	@include form_el_label;
+}
+
+.form_input__element {
+	@include form_el_default;
+}
+
+.form__file {
+	position: absolute;
+	bottom: 0.6rem;
+
+
+	@include bp($point_4, min) {
+		right: 0;
+	}
+
+	@include bp($point_4 - 1) {
+		right: 1.1rem;
+	}
+
+
+	input {
+		appearance: none;
+		opacity: 0;
+		width: 0;
+		height: 0;
+	}
+}
+
+.form_input__messages {
+	font-size: 1.2rem;
+	font-weight: 300;
+	color: $pink;
+
+	opacity: 0;
+
+	.form_input--error_state & {
+		opacity: 1;
+	}
+}

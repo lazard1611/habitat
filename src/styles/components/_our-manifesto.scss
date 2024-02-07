@@ -1,0 +1,159 @@
+.our_manifesto__title {
+	font-weight: 300;
+
+	@include bp($point_0, min) {
+		font-size: 8.8rem;
+		line-height: 1.05;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		font-size: 6.4rem;
+		line-height: 1.125;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 3.2rem;
+		line-height: 1.25;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 5.2rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin-bottom: 3.8rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 4.8rem;
+		}
+	}
+}
+
+.our_manifesto__wrap {
+	@include bp($point_0, min) {
+		max-width: 87%;
+		padding-left: var(--left-indent);
+	}
+
+	@include bp($point_0 - 1, 1201px) {
+		max-width: 82%;
+		padding-left: var(--left-indent);
+	}
+}
+
+.our_manifesto__item {
+	position: relative;
+	font-weight: 300;
+	transition: color 0.4s ease;
+
+	&:not(.our_manifesto__item--active_state) {
+		color: $black_2;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			padding-bottom: 7.2rem;
+		}
+
+		@include bp($point_0 - 1, 1201px) {
+			padding-bottom: 4.8rem;
+		}
+
+		@include bp(1200px) {
+			margin-bottom: 12rem;
+		}
+	}
+
+	@include bp($point_0, min) {
+		font-size: 4rem;
+		line-height: 1.4;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		font-size: 3.2rem;
+		line-height: 1.25;
+	}
+
+	@include bp($point_4 - 1) {
+		font-size: 2.4rem;
+		line-height: 1.42;
+	}
+}
+
+.our_manifesto__pic {
+	display: block;
+
+	@include bp(1201px, min) {
+		z-index: 100;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 27.2rem;
+		height: 21rem;
+		transition: opacity 0.5s ease;
+	}
+
+	&:not(.our_manifesto__pic--active_state) {
+		@include bp(1201px, min) {
+			opacity: 0;
+		}
+	}
+
+	.our_manifesto__item:nth-child(even) & {
+		@include bp(1200px) {
+			margin: 3rem 0 0 0;
+		}
+	}
+
+	.our_manifesto__item:nth-child(odd) & {
+		@include bp(1200px) {
+			width: clamp(18.1rem, 55%, 27.4rem);
+			height: clamp(14rem, 100%, 21.2rem);
+			margin: 3rem 0 0 auto;
+
+			position: relative;
+			right: calc(var(--gl-indent) * -1);
+		}
+	}
+
+	&:not(.our_manifesto__item:last-child &) {
+		@include bp(1200px) {
+			width: clamp(18.1rem, 55%, 27.4rem);
+			height: clamp(21.3rem, 100%, 32.2rem);
+			margin-bottom: 12rem;
+		}
+	}
+}
+
+.our_manifesto__img {
+	@include contain_img;
+}
+/*========================*/
+
+.hover-reveal {
+	position: absolute;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+	width: 27.2rem;
+
+	opacity: 0;
+
+	.our_manifesto__item:nth-child(odd) & {
+		height: 21rem;
+	}
+
+	.our_manifesto__item:nth-child(even) & {
+		height: 32rem;
+	}
+}
+
+.hover-reveal__inner,
+.hover-reveal__img {
+	width: 100%;
+	height: 100%;
+	position: relative;
+}

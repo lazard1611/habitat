@@ -1,0 +1,236 @@
+.projects {
+
+	@include bp($point_0, min) {
+		--itemWidth: 72.7%;
+		padding-top: 6rem;
+		padding-bottom: 6.6rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		--itemWidth: 63.6%;
+		padding-top: 2.7rem;
+		padding-bottom: 6.6rem;
+	}
+
+	@include bp($point_4 - 1) {
+		--itemWidth: 70.7%;
+		padding-bottom: 8.2rem;
+	}
+}
+
+.projects__in {
+}
+
+.projects__list {
+	@include bp($point_4, min) {
+		@include flex_block(row, wrap, flex-start, stretch);
+	}
+}
+
+.projects__item {
+	@include bp($point_4, min) {
+		width: 50%;
+		opacity: 0;
+	}
+
+	&:not(:last-child) {
+
+		@include bp($point_0, min) {
+			margin-bottom: 9.6rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin-bottom: 7rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 12.2rem;
+		}
+	}
+
+	&:nth-child(4n + 1) {
+		@include bp($point_4, min) {
+			padding-right: 1.6rem;
+		}
+
+		@include bp($point_4 - 1) {
+			width: clamp(30rem, 59vw, 45rem);
+		}
+	}
+
+	&:nth-child(4n + 4) {
+		@include bp($point_4, min) {
+			padding-left: 1.6rem;
+		}
+
+		@include bp($point_4 - 1) {
+			width: clamp(30rem, 59vw, 45rem);
+			margin-left: auto;
+		}
+	}
+
+	&:nth-child(4n + 2) {
+		@include bp($point_4 - 1) {
+			//padding-left: 14%;
+			width: clamp(28rem, 57vw, 41rem);
+			margin-left: auto;
+		}
+	}
+
+	&:nth-child(4n + 3) {
+		@include bp($point_4 - 1) {
+			//padding-right: 14%;
+			width: clamp(28rem, 57vw, 41rem);
+		}
+	}
+}
+
+.projects__item_in {
+	display: block;
+	color: inherit;
+
+	.projects__item:nth-child(4n + 2) &,
+	.projects__item:nth-child(4n + 3) & {
+
+		@include bp($point_0, min) {
+			width: 72.7%;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			width: 63.6%;
+		}
+	}
+
+	.projects__item:nth-child(even) & {
+		margin-left: auto;
+	}
+
+	&:focus,
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.projects__pic_wrap {
+	position: relative;
+	display: block;
+	overflow: hidden;
+
+	&:not(:last-child) {
+
+		@include bp($point_0, min) {
+			margin-bottom: 3.2rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin-bottom: 2.5rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 1.6rem;
+		}
+	}
+}
+
+.projects__pic {
+	position: relative;
+	display: block;
+	padding-top: 100%;
+
+	&.projects__pic--hover_mod {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+
+		transform: translateY(101%);
+		transition: opacity 0.5s ease, transform 0.5s ease;
+
+		.projects__item:hover & {
+			transform: translateY(0);
+		}
+	}
+}
+
+.projects__img {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	@include cover_img;
+
+	&:not(.projects__pic--hover_mod &) {
+		height: 110%;
+	}
+}
+
+.projects__subtitle {
+	@include h4;
+
+	color: $gray;
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 0.8rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin-bottom: 0.6rem;
+		}
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 0.8rem;
+		}
+	}
+}
+
+.projects__title {
+	@include h5;
+	font-weight: 400;
+	overflow: hidden;
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 1.6rem;
+		}
+
+		@include bp($point_0 - 1, $point_4) {
+			margin-bottom: 1.2rem;
+		}
+
+
+		@include bp($point_4 - 1) {
+			margin-bottom: 1.4rem;
+		}
+	}
+
+	.projects__item:nth-child(4n + 3) & {
+		@include bp($point_4 - 1) {
+			max-width: 78%;
+		}
+	}
+
+	.projects__item:nth-child(6n + 5) &  {
+		@include bp($point_4 - 1) {
+			max-width: 90%;
+		}
+	}
+}
+
+.projects__label_wrap {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	margin: 0 -0.8rem -1.4rem 0;
+}
+
+.projects__label_item {
+	padding: 0 0.8rem 1.4rem 0;
+}
+
+.split-line {
+	overflow: hidden;
+}

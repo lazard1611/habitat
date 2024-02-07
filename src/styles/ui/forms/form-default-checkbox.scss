@@ -1,0 +1,77 @@
+@mixin form_el_checkbox {
+	position: relative;
+
+	@include h3;
+	color: $colorTextBase;
+	cursor: pointer;
+
+	&:before,
+	&:after {
+		position: absolute;
+
+		cursor: pointer;
+		content: '';
+
+		@include bp($point_4, min) {
+			top: -1px;
+		}
+
+		@include bp($point_4 - 1) {
+			top: 0.2rem;
+		}
+	}
+
+	&:before {
+		border-radius: 1px;
+		border: 1px solid $colorTextBase;
+
+		transition: transform 0.2s;
+		will-change: transform;
+
+		@include bp($point_4, min) {
+			left: 0;
+			width: 2rem;
+			height: 2rem;
+		}
+
+		@include bp($point_4 - 1) {
+			left: 0.5rem;
+			width: 1.4rem;
+			height: 1.4rem;
+		}
+	}
+
+	&::after {
+		opacity: 0;
+
+		border-bottom: 2px solid $colorTextBase;
+		border-right: 3px solid $colorTextBase;
+
+		transition: transform 0.2s, opacity 0.2s;
+
+		@include bp($point_4, min) {
+			width: 1.4rem;
+			height: 1.4rem;
+			left: 0.3rem;
+		}
+
+		@include bp($point_4 - 1) {
+			width: 1rem;
+			height: 1rem;
+			left: 0.7rem;
+		}
+
+		.form_checkbox__element:checked + & {
+			transform: rotateZ(40deg) scaleX(0.6);
+			opacity: 1;
+		}
+	}
+
+	@include bp($point_0, min) {
+		padding-left: 3.4rem;
+	}
+
+	@include bp($point_0 - 1) {
+		padding-left: 3rem;
+	}
+}

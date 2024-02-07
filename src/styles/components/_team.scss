@@ -1,0 +1,261 @@
+.team {
+	@include bp($point_0, min) {
+		padding-top: 12.8rem;
+		padding-bottom: 10rem;
+	}
+
+	@include bp($point_0 - 1, $point_2) {
+		padding-top: 7rem;
+		padding-bottom: 4.6rem;
+	}
+
+	@include bp($point_3) {
+		padding-top: 7rem;
+		padding-bottom: 7rem;
+	}
+}
+
+.team__in {
+}
+
+.team__title_wrap {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 4rem;
+		}
+
+		@include bp($point_0 - 1, $point_2) {
+			margin-bottom: 2.6rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 4.7rem;
+		}
+	}
+}
+
+.team__button {
+	display: block;
+	margin-left: 2rem;
+
+	overflow: hidden;
+
+	cursor: pointer;
+	background-color: $white;
+	border-radius: 50%;
+	color: $black;
+
+	transition: opacity 0.3s ease;
+
+	&:not(.team__button--active_state) {
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+	}
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	@include bp($point_1, min) {
+		padding: 1.4rem 1.6rem 1rem;
+		width: 6rem;
+		height: 6rem;
+		margin-top: -1.6rem;
+	}
+
+	@include bp($point_0 - 1, $point_2) {
+		padding: 1.4rem 1.4rem 1rem;
+		width: 5rem;
+		height: 5rem;
+		margin-top: -2rem;
+	}
+
+	@include bp($point_3) {
+		padding: 0.5rem 0.8rem;
+		width: 3rem;
+		height: 3rem;
+		margin-top: -1rem;
+	}
+}
+
+.team__title {
+	@include h6;
+	will-change: transform;
+}
+
+.team__list {
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-wrap: nowrap;
+
+	padding-left: var(--left-indent);
+
+	@include bp($point_2, min) {
+		margin: 0 -3.2rem -4rem 0;
+	}
+
+	@include bp($point_3) {
+		margin: 0 -1.6rem -4rem 0;
+	}
+}
+
+.team__item {
+	@include bp($point_2, min) {
+		padding: 0 3.2rem 4rem 0;
+	}
+
+	@include bp($point_3) {
+		padding: 0 1.6rem 4rem 0;
+	}
+}
+
+.team__item_in {
+	cursor: pointer;
+
+	@media (min-width: $point_0) and (min-height: 950px)  {
+		width: clamp(36rem, 49vh, 52.8rem);
+	}
+
+	@media (min-width: $point_0) and (max-height: 949px)  {
+		width: clamp(32rem, 40vh, 52.8rem);
+	}
+
+	@media (max-width: $point_0 - 1) and (min-width: $point_4) {
+		width: clamp(28rem, 52vh, 55.6rem);
+	}
+
+	@include bp($point_4 - 1) {
+		width: clamp(22rem, 33vh, 31.2rem);
+	}
+}
+
+.team__pic_wrap {
+	overflow: hidden;
+	position: relative;
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 1.6rem;
+		}
+
+		@include bp($point_0 - 1, $point_2) {
+			margin-bottom: 1.4rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 1.6rem;
+		}
+	}
+}
+
+.team__pic {
+	position: relative;
+	display: block;
+
+	&.team__pic--hover_mod {
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		width: 100%;
+		height: 100%;
+	}
+
+	@include bp($point_0, min) {
+		padding-top: 121.4%;
+	}
+
+	@include bp($point_0 - 1, $point_2) {
+		padding-top: 115.4%;
+	}
+
+	@include bp($point_3, $point_7 - 1) {
+		padding-top: 114%;
+	}
+
+	@include bp($point_7) {
+		padding-top: 153.8%;
+	}
+}
+
+.team__img {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	@include cover_img;
+
+	.team__pic--hover_mod & {
+		transform: translateY(101%);
+		transition: opacity 0.5s ease, transform 0.5s ease;
+
+		.team__item:hover & {
+			transform: translateY(0);
+		}
+	}
+}
+
+.team__name {
+	@include h5;
+
+	&:not(:last-child) {
+
+		@include bp($point_0, min) {
+			margin-bottom: 0.8rem;
+		}
+
+		@include bp($point_0 - 1, $point_2) {
+			margin-bottom: 0.4rem;
+		}
+
+		@include bp($point_3) {
+			margin-bottom: 0.8rem;
+		}
+	}
+}
+
+.team__text {
+	position: relative;
+}
+
+.team__position {
+	@include h4;
+	color: $gray;
+
+	transition: opacity 0.5s ease, transform 0.5s ease;
+
+	.team__item:hover & {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+}
+
+.team__description {
+	@include h4;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: $gray;
+
+	width: 100%;
+
+	opacity: 0;
+	background-color: $black;
+
+	transform: translateY(100%);
+	transition: opacity 0.5s ease, transform 0.5s ease;
+
+	.team__item:hover & {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
