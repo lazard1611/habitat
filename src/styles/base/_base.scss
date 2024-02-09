@@ -77,6 +77,7 @@ body {
 	&.body--open_menu_state,
 	&.body--preload {
 		//overflow: hidden;
+		opacity: 0;
 	}
 }
 

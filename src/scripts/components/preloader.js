@@ -25,9 +25,6 @@ const preloader = () => {
 	const $body = document.body;
 	let mm = gsap.matchMedia();
 
-	const addClass = () => {
-		$body.classList.add(CLASSES.activeState);
-	}
 	$preloadMob.style.opacity = '0';
 
 	const scrollDisable = () => {
@@ -39,18 +36,16 @@ const preloader = () => {
 		scroll.start();
 	};
 
-	addClass();
-
 	const removeClass = () => {
 		if ($body.classList.contains(CLASSES.activeState)) {
 			$body.classList.remove(CLASSES.activeState);
 		}
 	};
 
-	const setDisableOpacityBody = () => {
-		$body.style.opacity = '0';
-	};
-	setDisableOpacityBody();
+	// const setDisableOpacityBody = () => {
+	// 	$body.style.opacity = '0';
+	// };
+	// setDisableOpacityBody();
 
 	const setEnableOpacityBody = () => {
 		$body.style.opacity = '1';

@@ -130,6 +130,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #000; }
+  body.body--open_menu_state, body.body--preload {
+    opacity: 0; }
 
 .wrapper {
   position: relative;
@@ -1304,8 +1306,7 @@ html.has-scroll-dragging {
       max-width: 90%; } }
   @media screen and (min-width: 1920px) {
     .hero__title:not(:last-child) {
-      margin-bottom: 4.6rem;
-      line-height: 0.95; } }
+      margin-bottom: 4.6rem; } }
   @media (max-width: 1919px) and (min-width: 768px) {
     .hero__title:not(:last-child) {
       margin-bottom: 1.6rem; } }

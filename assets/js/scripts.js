@@ -2215,9 +2215,6 @@ var preloader = function preloader() {
   var srcArr = [];
   var $body = document.body;
   var mm = gsap.matchMedia();
-  var addClass = function addClass() {
-    $body.classList.add(CLASSES.activeState);
-  };
   $preloadMob.style.opacity = '0';
   var scrollDisable = function scrollDisable() {
     _smooth_animation__WEBPACK_IMPORTED_MODULE_0__.scroll.stop();
@@ -2226,16 +2223,17 @@ var preloader = function preloader() {
   var scrollEnable = function scrollEnable() {
     _smooth_animation__WEBPACK_IMPORTED_MODULE_0__.scroll.start();
   };
-  addClass();
   var removeClass = function removeClass() {
     if ($body.classList.contains(CLASSES.activeState)) {
       $body.classList.remove(CLASSES.activeState);
     }
   };
-  var setDisableOpacityBody = function setDisableOpacityBody() {
-    $body.style.opacity = '0';
-  };
-  setDisableOpacityBody();
+
+  // const setDisableOpacityBody = () => {
+  // 	$body.style.opacity = '0';
+  // };
+  // setDisableOpacityBody();
+
   var setEnableOpacityBody = function setEnableOpacityBody() {
     $body.style.opacity = '1';
   };
